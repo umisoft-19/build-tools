@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Something went wrong!</h1>
+        <p class="lead">Application failed to install due to an error</p>
+        <hr class="my-2">
+        <p>Please try reinstalling the application or contacting your vendor to resolve the issue.</p>
+
+        <p class="lead">
+            <a class="btn btn-primary" href="" role="button">Close</a>
+            <a class="btn btn-primary" href="mailto:kandoroc@hotmail.com" role="button">Contact Vendor</a>
+        </p>
+    </div>
+    <h4>Error Code: {{error_code}}</h4>
+    <h4>To resolve the issue try:</h4>
+    <ul>
+        <li>Try checking the internet connection. The application requires a reliable connection to work</li>
+        <li>If using Windows 7 or 8, please install the latest windows update as the application requires some updates to function correctly.</li>
+        <li>For IT professionals using Windows 7 or 8, please install the standalone Windows updates located in the "app/bin/" folder namely KB2999226 that is designed for your operating system.</li>
+    </ul>
+    
+</div>
+
+{% endblock content %}

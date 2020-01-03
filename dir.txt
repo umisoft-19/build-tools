@@ -1,0 +1,3 @@
+C:\Users\nakamura9a\Documents\code\git\umisoft\core
+
+python build.py C:\Users\nakamura9a\Documents\code\git\umisoft\core --quick

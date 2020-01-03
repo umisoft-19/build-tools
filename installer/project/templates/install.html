@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Installing</h1>
+        <p class="lead">Please wait while application installs</p>
+        <hr class="my-2">
+
+        <a id="finish-button" style="display:none;" class="btn btn-primary" href="/finish" role="button">Finish</a>
+    </div>
+   
+
+    <script>
+        setInterval(function(){
+            $.get('/status?t=' +  Math.random().toString(), {}, function(data){
+                $('#messages').empty()
+                if(data.install.success === true ){
+                    $('#finish-button').show()
+                    $('#finish-button').attr('href', '/install-success')
+                }else if(data.install.success === false){
+                    $('#finish-button').show()
+                    $('#finish-button').attr('href', '/install-failure')
+                }else{
+                    $('#finish-button').hide()
+                }
+
+                $("#id_progress_bar").css('width', data.install.progress.toString() + '%')
+                $("#id_progress_bar").text(data.install.progress.toString() + "%")
+                $.each(data.install.messages, function(i){
+                    $('<p>').text(data.install.messages[i]).appendTo($('#messages'))
+                })
+                //$("#messages").html()
+            })
+        }, 2000)
+    </script>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="progress">
+                <div class="progress-bar pulse" id="id_progress_bar" style="width:0%;">0%</div>
+            </div>
+            <hr class="my-4">
+            <div class="card">
+                
+                <div class="card-body">
+                    <h5 class="card-title">Installation actions:</h5>
+                    <div id="messages">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

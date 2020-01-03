@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">Making Checks</h1>
+        <p class="lead">Please wait while the installer checks for the necessary files.</p>
+        <hr class="my-2">
+        <p></p>
+        <p class="lead">
+            
+            <a id="next-button" style="display:none;" class="btn btn-primary" href="/location" role="button">Next</a>
+            <a id="retry-button" style="display:none;" class="btn btn-warning" href="" role="button">Retry</a>
+
+        </p>
+    </div>
+    <script>
+        setInterval(function (){
+            $.get('/status?t=' + Math.random().toString() , {}, function(data){
+                if(data.license_check.license_valid){
+                    $('#next-button').show()
+                }else{
+                    $('#next-button').hide()
+                }
+                if(data.license_check.retry_active){
+                    $('#retry-button').show()
+                }else{
+                    $('#retry-button').hide()
+                }
+                $('#messages').empty()
+
+                 $.each(data.license_check.message, function(i){
+                    $('<p>').text(data.license_check.message[i]).appendTo($('#messages'))
+                })
+            })
+        }, 500)
+    </script>
+
+    <div class="row">
+        <div class="col-sm-4" >
+            <img src="{{ url_for('static', filename='spinner.gif') }}" alt="">
+        </div>
+        <div id="messages" class="col-sm-8">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

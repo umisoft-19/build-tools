@@ -1,0 +1,87 @@
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:urllib3.connectionpool:http://google.com:80 "GET / HTTP/1.1" 301 219
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.google.com:80
+DEBUG:urllib3.connectionpool:http://www.google.com:80 "GET / HTTP/1.1" 200 5283
+DEBUG:root:looking for the license file.
+DEBUG:root:verifying license.
+DEBUG:root:hardware id
+DEBUG:root:UUID                                  
+0FAF1A01-52D0-11CB-AADC-FF2A8DC21496  
+
+
+DEBUG:root:0FAF1A01-52D0-11CB-AADC-FF2A8DC21496
+DEBUG:root:registering license with licensing server.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): nakamura9.pythonanywhere.com:80
+DEBUG:urllib3.connectionpool:http://nakamura9.pythonanywhere.com:80 "GET /register?info=%257B%2522customer_id%2522%253A%25201%252C%2520%2522hardware_id%2522%253A%2520%25220FAF1A01-52D0-11CB-AADC-FF2A8DC21496%2522%252C%2520%2522signature%2522%253A%2520%2522a91ae60884cc80f6098f1b1c09d2a488d670fe24efce2efb9acbf66d0e7f1cd594cf40644635235473ddaacc85b355e6d1df6ef8a95533dc034b0702d6367c3a%2522%257D HTTP/1.1" 404 None
+DEBUG:root:Failed to register with the application server.
+Click "retry" to try the process again.
+DEBUG:root:The license in the current folder is not registered with the licensing server.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:root:You do not seem to have an active internet connection so the installation is unable to proceed. Please press retry is if the issue is now resolved.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:root:You do not seem to have an active internet connection so the installation is unable to proceed. Please press retry is if the issue is now resolved.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:root:You do not seem to have an active internet connection so the installation is unable to proceed. Please press retry is if the issue is now resolved.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:root:You do not seem to have an active internet connection so the installation is unable to proceed. Please press retry is if the issue is now resolved.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:root:You do not seem to have an active internet connection so the installation is unable to proceed. Please press retry is if the issue is now resolved.
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:urllib3.connectionpool:http://google.com:80 "GET / HTTP/1.1" 301 219
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.google.com:80
+DEBUG:urllib3.connectionpool:http://www.google.com:80 "GET / HTTP/1.1" 200 5605
+DEBUG:root:looking for the license file.
+DEBUG:root:verifying license.
+DEBUG:root:hardware id
+DEBUG:root:UUID                                  
+0FAF1A01-52D0-11CB-AADC-FF2A8DC21496  
+
+
+DEBUG:root:0FAF1A01-52D0-11CB-AADC-FF2A8DC21496
+DEBUG:root:registering license with licensing server.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): nakamura9.pythonanywhere.com:80
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:urllib3.connectionpool:http://google.com:80 "GET / HTTP/1.1" 301 219
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.google.com:80
+DEBUG:urllib3.connectionpool:http://www.google.com:80 "GET / HTTP/1.1" 200 5604
+DEBUG:root:looking for the license file.
+DEBUG:root:verifying license.
+DEBUG:root:hardware id
+DEBUG:root:UUID                                  
+0FAF1A01-52D0-11CB-AADC-FF2A8DC21496  
+
+
+DEBUG:root:0FAF1A01-52D0-11CB-AADC-FF2A8DC21496
+DEBUG:root:registering license with licensing server.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): nakamura9.pythonanywhere.com:80
+DEBUG:root:Checking internet connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): google.com:80
+DEBUG:urllib3.connectionpool:http://google.com:80 "GET / HTTP/1.1" 301 219
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): www.google.com:80
+DEBUG:urllib3.connectionpool:http://www.google.com:80 "GET / HTTP/1.1" 200 5617
+DEBUG:root:looking for the license file.
+DEBUG:root:verifying license.
+DEBUG:root:hardware id
+DEBUG:root:UUID                                  
+0FAF1A01-52D0-11CB-AADC-FF2A8DC21496  
+
+
+DEBUG:root:0FAF1A01-52D0-11CB-AADC-FF2A8DC21496
+DEBUG:root:registering license with licensing server.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): nakamura9.pythonanywhere.com:80
+DEBUG:root:Checking for license file
+DEBUG:root:verifying license.
+DEBUG:root:License validated successfully, Click next to continue
+DEBUG:root:Setting up environment
+DEBUG:root:Copying application files
+DEBUG:root:Checking for license file
+DEBUG:root:verifying license.
+DEBUG:root:License validated successfully, Click next to continue
