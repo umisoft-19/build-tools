@@ -31,6 +31,8 @@ class BuildExtensions():
     def compile(self):
         res = subprocess.run(['python', 'setup.py', 'build_ext'], env=self.env)
         if res.returncode != 0:
+            print(res.stdout)
+            print(res.stderr)
             raise Exception(' The extensions failed to build correctly')
 
     def rename_extensions(self):

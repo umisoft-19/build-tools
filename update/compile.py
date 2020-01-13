@@ -27,6 +27,8 @@ class SourceCompiler():
     def run(self):
         for f in self.folders:
             f_path = os.path.join(self.root, f)
+            print(f_path)
+            print(os.path.exists(f_path))
 
             if not os.path.exists(f_path): continue
             

@@ -1,30 +1,30 @@
-2020-01-02 17:39:06,593 [INFO  ] [Step 1] Checking repository status
-2020-01-02 17:39:06,593 [INFO  ] [Step 3] Checking react bundles
-2020-01-02 17:39:06,596 [INFO  ] Step[5] collecting static files
-2020-01-02 17:39:12,696 [INFO  ] Step [6] copying source code
-2020-01-02 17:39:12,705 [INFO  ] accounting
-2020-01-02 17:39:13,038 [INFO  ] common_data
-2020-01-02 17:39:15,576 [INFO  ] employees
-2020-01-02 17:39:16,091 [INFO  ] inventory
-2020-01-02 17:39:16,641 [INFO  ] invoicing
-2020-01-02 17:39:16,933 [INFO  ] messaging
-2020-01-02 17:39:17,160 [INFO  ] manufacturing
-2020-01-02 17:39:17,291 [INFO  ] planner
-2020-01-02 17:39:17,438 [INFO  ] services
-2020-01-02 17:39:17,771 [INFO  ] latrom
-2020-01-02 17:39:17,829 [INFO  ] Step [7] Deleting cache
-2020-01-02 17:39:18,080 [INFO  ] Step [8] Compiling source code
-2020-01-02 17:39:48,258 [INFO  ] Step [9] Building extensions
-2020-01-02 17:39:57,685 [INFO  ] Step [10] moving webpack-stats file
-2020-01-02 17:39:57,735 [INFO  ] Step [11] moving binaries(wkhtmltopdf etc.)
-2020-01-02 17:39:57,994 [INFO  ] Step [12] Creating setup executable
-2020-01-02 17:40:44,148 [INFO  ] Step [13] Creating client executable
-2020-01-02 17:41:11,960 [INFO  ] Step [14] building service
-2020-01-02 17:41:11,973 [INFO  ] Step [15] moving python
-2020-01-02 17:41:59,005 [INFO  ] Step [16] installing packages
-2020-01-02 17:44:41,802 [INFO  ] Step [16] Creating service executable
-2020-01-02 17:45:08,765 [INFO  ] Step [19] packaging app
-2020-01-02 17:45:08,772 [INFO  ] Step [20] moving src
-2020-01-02 17:45:08,826 [INFO  ] Step [21] moving executables
-2020-01-02 17:45:17,165 [INFO  ] Step [22] Compressing the application
-2020-01-02 17:45:17,165 [INFO  ] Completed the build process successfully in 371.07 seconds
+2020-01-10 13:32:31,911 [INFO  ] [Step 1] Checking repository status
+2020-01-10 13:32:31,912 [INFO  ] [Step 3] Checking react bundles
+2020-01-10 13:32:31,913 [INFO  ] Step[5] collecting static files
+2020-01-10 13:32:38,139 [INFO  ] Step [6] copying source code
+2020-01-10 13:32:38,141 [INFO  ] accounting
+2020-01-10 13:32:38,399 [INFO  ] common_data
+2020-01-10 13:32:40,330 [INFO  ] employees
+2020-01-10 13:32:40,647 [INFO  ] inventory
+2020-01-10 13:32:41,185 [INFO  ] invoicing
+2020-01-10 13:32:41,430 [INFO  ] messaging
+2020-01-10 13:32:41,591 [INFO  ] manufacturing
+2020-01-10 13:32:41,687 [INFO  ] planner
+2020-01-10 13:32:41,783 [INFO  ] services
+2020-01-10 13:32:42,008 [INFO  ] latrom
+2020-01-10 13:32:42,046 [INFO  ] Step [7] Deleting cache
+2020-01-10 13:32:42,296 [INFO  ] Step [8] Compiling source code
+2020-01-10 13:32:47,274 [INFO  ] Step [9] Building extensions
+2020-01-10 13:32:53,211 [INFO  ] Step [10] moving webpack-stats file
+2020-01-10 13:32:53,213 [INFO  ] Step [11] moving binaries(wkhtmltopdf etc.)
+2020-01-10 13:32:53,418 [INFO  ] Step [12] Creating setup executable
+2020-01-10 13:33:23,882 [INFO  ] Step [13] Creating client executable
+2020-01-10 13:33:47,398 [INFO  ] Step [14] building service
+2020-01-10 13:33:47,398 [INFO  ] Step [15] moving python
+2020-01-10 13:34:36,236 [INFO  ] Step [16] installing packages
+2020-01-10 13:37:03,561 [INFO  ] Step [16] Creating service executable
+2020-01-10 13:37:21,633 [INFO  ] Step [19] packaging app
+2020-01-10 13:37:21,634 [INFO  ] Step [20] moving src
+2020-01-10 13:37:21,682 [INFO  ] Step [21] moving executables
+2020-01-10 13:37:25,189 [INFO  ] Step [22] Compressing the application
+2020-01-10 13:37:25,189 [INFO  ] Completed the build process successfully in 293.87 seconds

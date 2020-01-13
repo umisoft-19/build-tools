@@ -1,0 +1,1 @@
+python build.py F:\Documents\code\git\umisoft\core F:\Documents\code\git\umisoft\build-tools\build_counter.json

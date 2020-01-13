@@ -92,6 +92,7 @@ class DjangoProjectBuilder():
         self.major = self.args[2] == '-M'
         self.minor = self.args[2] == '-m'
         self.app_dir = self.args[1]
+        print(self.app_list)
         if not os.path.exists(self.app_dir) or not os.path.exists(
                 os.path.join(self.app_dir, 'manage.py')):
             raise Exception('The application path provided is incorrect or no valid django application was found in this directory')
@@ -416,7 +417,7 @@ class DjangoProjectBuilder():
         
         with open(conf_path, 'r') as conf_file:
             conf = json.load(conf_file)
-            conf['application_version'] 
+            conf['application_version'] = build_summary['version']
         
         with open(conf_path, 'w') as conf_file:
             json.dump(conf)

@@ -12,6 +12,12 @@ build/python/
 installer/app/
 licensing/build/
 licensing/dist/
+update/build/
+update/dist/
+update/files/
+update/update/
+update/del_list.txt
+update/meta.json
 temp/
 dist/
 env/
@@ -19,3 +25,4 @@ key.txt
 license.json
 *.exe
 *.dll
+*.log

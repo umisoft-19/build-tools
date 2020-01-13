@@ -1,7 +1,1 @@
-{
-    "major": 0,
-    "minor": 0,
-    "patch": 1,
-    "builds": [],
-    "major_releases": []
-}
+{"major": 1, "minor": 0, "patch": 0, "builds": [{"version": "1.0.0", "hash": "59b1f9b537dd78e9ff8c4e4d5513900ee86f5166", "date": "31/12/2019"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "11/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "11/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "12/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "12/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "12/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "12/01/2020"}, {"version": "1.0.1", "hash": "f81300402da39c0c43bdf011524eb489c638c12a", "date": "12/01/2020"}], "major_releases": [{"version": "1.0.0", "hash": "59b1f9b537dd78e9ff8c4e4d5513900ee86f5166", "date": "31/12/2019"}]}

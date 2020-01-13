@@ -216,6 +216,10 @@ def install():
         set_progress(95, success=False)
         return 
 
+    res = subprocess.run(['service.exe', 'start'], env=ENVIRONMENT)
+    if res.returncode != 0:
+        write message("failed to start service, please restart your machine to finish installation.")
+
     write_message("Installed Application successfully.")
     set_progress(100, success=True)
 
