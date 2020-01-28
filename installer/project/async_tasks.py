@@ -227,35 +227,44 @@ def create_superuser(env):
     '''edits a the common fixture to include a default superuser as defined by the prompts in the install process'''
     
     BASE_DIR = os.getcwd()
-    os.chdir(application_state['app_location'])
+    os.chdir(os.path.join(application_state['app_location'],
+        'service', 'server'))
 
-    result = subprocess.run(['service/python/python.exe', 'password_util.py', 
-        application_state['superuser']['password']], env=env)
+    res = subprocess.run(['../python/python.exe', 
+                          'create_user.py',
+                          application_state['superuser']['username'],
+                          application_state['superuser']['email'],
+                          application_state['superuser']['password']])
     if result.returncode != 0:
-        raise Exception("Failed to create password hash")
-    with open('hashed_password.txt', 'r') as f:
-        password = f.read()
+         raise Exception("Failed to create superuser")
+    
+    # result = subprocess.run(['service/python/python.exe', 'password_util.py', 
+    #     application_state['superuser']['password']], env=env)
+    # if result.returncode != 0:
+    #     raise Exception("Failed to create password hash")
+    # with open('hashed_password.txt', 'r') as f:
+    #     password = f.read()
 
-    os.remove('hashed_password.txt')
-    os.remove('password_util.py')
+    # os.remove('hashed_password.txt')
+    # os.remove('password_util.py')
 
-    userdata = {
-        "model": 'auth.user',
-        'pk': 2,
-        'fields': {
-            'username': application_state['superuser']['username'],
-            'password': password,
-            'is_superuser': True,
-            'is_staff': True,
-            'is_active': True
-        }
-    }
-    fixture_path = os.path.join(application_state['app_location'],'service', 
-        'server', 'common_data', 'fixtures', 'common.json')
-    common_fixture = json.load(open(fixture_path, 'r'))
-    common_fixture.append(userdata)
-    os.remove(fixture_path)
+    # userdata = {
+    #     "model": 'auth.user',
+    #     'pk': 2,
+    #     'fields': {
+    #         'username': application_state['superuser']['username'],
+    #         'password': password,
+    #         'is_superuser': True,
+    #         'is_staff': True,
+    #         'is_active': True
+    #     }
+    # }
+    # fixture_path = os.path.join(application_state['app_location'],'service', 
+    #     'server', 'common_data', 'fixtures', 'common.json')
+    # common_fixture = json.load(open(fixture_path, 'r'))
+    # common_fixture.append(userdata)
+    # os.remove(fixture_path)
 
-    json.dump(common_fixture, open(fixture_path, 'w'))
+    # json.dump(common_fixture, open(fixture_path, 'w'))
 
     os.chdir(BASE_DIR)
