@@ -22,11 +22,15 @@ def start_server():
     app.run(host='127.0.0.1', port='5000', threaded=True)
 
 if __name__ == '__main__':
-    st =threading.Thread(target=start_server)
-    st.daemon=True
-    st.start()
-    t = threading.Timer(1.5, hide_console)
-    t.daemon =True
-    t.start()
-    create_browser_window()
+    try:
+        st =threading.Thread(target=start_server)
+        st.daemon=True
+        st.start()
+        t = threading.Timer(1.5, hide_console)
+        t.daemon =True
+        t.start()
+        create_browser_window()
 
+    except Exception as e:
+        print(e)
+        input('press any key to exit')
