@@ -91,7 +91,7 @@ class UpdateBuilder():
     def analyse_changes(self):
         self.logger.info("Step [4] Analysing build changes")
 
-        self.diffs = self.repo.head.commit.diff(self.previous_major_build['hash'])
+        self.diffs = self.repo.commit(self.previous_major_build['hash']).diff(self.repo.head.commit.hexsha)
         
         if len(list(self.diffs)) == 0:
             self.logger.warn('There are no changes between the current and the previous build')
@@ -108,6 +108,9 @@ class UpdateBuilder():
 
         self.update_dir = os.path.join(self.curr_dir, 'update')
         files_dir = os.path.join(self.update_dir, 'files')
+        if os.path.exists(files_dir):
+            shutil.rmtree(files_dir)
+
         if not os.path.exists(files_dir):
             os.makedirs(files_dir)
         
@@ -115,7 +118,7 @@ class UpdateBuilder():
         delete_list = open(os.path.join(self.update_dir, 'del_list.txt'), 'w')
 
         for d in [ i for i in self.diffs if 'build' not in i.b_path]:
-            if d.change_type in ["D", "R", 'A']:
+            if d.change_type in ["D", "R"]:
                 delete_list.write(d.b_path + '\n')
             else:
                 pathname = d.b_path.replace("/", "\\")
@@ -160,10 +163,10 @@ class UpdateBuilder():
             'date': build['date']
         }
         self.counter['builds'].append(summary)
-        self.counter['major_releases'][-1].get('updates', []).append(summary)
+        self.counter['major_releases'][-1].setdefault('updates', []).append(summary)
         
         self.counter['minor'] = build['minor']
-        self.counter['patch'] = build['minor']
+        self.counter['patch'] = build['patch']
         
         with open(self.counter_path, 'w') as counter_file:
             json.dump(self.counter, counter_file)

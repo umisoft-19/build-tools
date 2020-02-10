@@ -1,4 +1,5 @@
 *.pyc
+*.pyo
 *.zip
 installer/dist/
 client/dist/

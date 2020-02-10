@@ -136,6 +136,15 @@ class UmisoftUpdateApp():
                 shutil.copy(os.path.join(_dir, file), dest)
 
         self.logger.info("Source files updated successfully")
+        
+        self.logger.info("Moving static files")
+        os.chdir(os.path.join(self.service_path,'..', 'server'))
+        results = subprocess.run(['../python/python.exe', 'manage.py', 'collectstatic', '--noinput'])
+        if results.returncode != 0:
+            self.logger('Could not collect static files')
+            raise UpdateException("Failed to collect static files")
+
+        self.logger.info('static files moved successfully')
     
     def migrate_db(self):
         self.logger.info("Migrating database")

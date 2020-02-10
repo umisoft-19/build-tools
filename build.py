@@ -333,9 +333,9 @@ class DjangoProjectBuilder():
             )
 
         #moving password_util
-        shutil.move(
-            os.path.join(self.temp_dir, 'service', 'server', 'password_util.py'), 
-                self.temp_dir)
+        # shutil.move(
+        #     os.path.join(self.temp_dir, 'service', 'server', 'password_util.py'), 
+        #         self.temp_dir)
 
         self.logger.info('Step [21] moving executables')
         #installer
