@@ -92,7 +92,6 @@ class DjangoProjectBuilder():
         self.major = self.args[2] == '-M'
         self.minor = self.args[2] == '-m'
         self.app_dir = self.args[1]
-        print(self.app_list)
         if not os.path.exists(self.app_dir) or not os.path.exists(
                 os.path.join(self.app_dir, 'manage.py')):
             raise Exception('The application path provided is incorrect or no valid django application was found in this directory')
@@ -173,8 +172,6 @@ class DjangoProjectBuilder():
         if res.returncode != 0:
             self.logger.error('Failed to build react bundles')
             raise Exception('Failed to build react bundles')
-
-        
 
     def run_tests(self):
         if self.quick_build:
@@ -259,7 +256,6 @@ class DjangoProjectBuilder():
         shutil.copytree(os.path.join(self.base_dir, 'build', 'bin'), 
             os.path.join(self.temp_dir, 'service', 'bin'))
         
-
     def build_installer(self):
         #TODO update installer!
         self.logger.info("Step [12] Creating setup executable")

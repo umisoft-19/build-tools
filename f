@@ -23,7 +23,7 @@ DisableProgramGroupPage=yes
 LicenseFile=C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\licence.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename=Bentsch Setup
+OutputBaseFilename=mysetup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -58,7 +58,6 @@ Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-localization-l1-2-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-memory-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-namedpipe-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-processenvironment-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-processthreads-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-processthreads-l1-1-1.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\api-ms-win-core-profile-l1-1-0.dll"; DestDir: "{app}"; Flags: ignoreversion
@@ -123,8 +122,6 @@ Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\win32console.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\win32gui.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\win32wnet.pyd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\cefpython3\*"; DestDir: "{app}\cefpython3"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\locales\*"; DestDir: "{app}\locales"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\temp\service\service\*"; DestDir: "{app}\service"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\temp\service\server\*"; DestDir: "{app}\server"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\temp\service\database\config.json"; DestDir: "{app}\database\config.json"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -138,10 +135,7 @@ Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Registry]
-Root: HKLM64; Subkey: "Software\umisoft-19"; Check: IsWin64;  Flags: uninsdeletekeyifempty
-Root: HKLM64; Subkey: "SOFTWARE\umisoft-19"; Check: IsWin64; ValueType: string; ValueName: "SERVICE_PATH"; ValueData: "{app}\service"; Flags: uninsdeletekeyifempty
-Root: HKLM32; Subkey: "Software\umisoft-19"; Flags: uninsdeletekeyifempty
-Root: HKLM32; Subkey: "SOFTWARE\umisoft-19"; ValueType: string; ValueName: "SERVICE_PATH"; ValueData: "{app}\service"; Flags: uninsdeletekeyifempty
+Root: HKLM; Subkey: "SOFTWARE\\umisoft-19"; ValueType: string; ValueName: "SERVICE_PATH"; ValueData: "{app}\service\"; Flags: uninsdeletekeyifempty
 
 
 [Run]

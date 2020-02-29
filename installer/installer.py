@@ -1,36 +1,48 @@
-from project import app
-import webview
-import threading
-import time
 import os
+import subprocess
+import logging
+#structure
+#install.exe
+#server
+#   |____manage.py
+#python
+#   |____python.exe
+#bin
+#   |____vc_redist.x64.exe
 
-import win32gui, win32con, win32console
+class ServiceException(Exception): pass
 
-print(os.getcwd())
+try:
+    result = subprocess.run('bin/vc_redist.x64.exe')
 
-def hide_console():
-    print('hiding console')
-    console = win32console.GetConsoleWindow()
-    win32gui.ShowWindow(console , win32con.SW_HIDE)
+    os.chdir('server')
+    results = subprocess.run(['../python/python.exe', 'manage.py', 'migrate'])
+    #install binaries
 
+    if results.returncode != 0:
+        print('failed to migrate')
 
-def create_browser_window():
-    webview.create_window('Installer', 'http://localhost:5000')
-    webview.start(debug=True, gui='mshtml')
+    results = subprocess.run(['../python/python.exe', 'manage.py', 'loaddata', 
+        'accounts.json', 'journals.json', 'settings.json', 'common.json', 
+        'employees.json', 'inventory.json', 'invoicing.json', 'planner.json', 
+        'payroll.json'])
 
-def start_server():
-    app.run(host='127.0.0.1', port='5000', threaded=True)
+    os.chdir('../service')
+    print(os.getcwd())
+    
 
-if __name__ == '__main__':
-    try:
-        st =threading.Thread(target=start_server)
-        st.daemon=True
-        st.start()
-        t = threading.Timer(1.5, hide_console)
-        t.daemon =True
-        t.start()
-        create_browser_window()
+    result = subprocess.run(['service.exe', '--startup=auto', 'install'])
 
-    except Exception as e:
-        print(e)
-        input('press any key to exit')
+    if result.returncode != 0:
+        print('failed to install service')
+        raise ServiceException('Failed to install')
+
+    res = subprocess.run(['sc', 'start', 'UmisoftService'])
+    if res.returncode != 0:
+        print('failed to start service')
+        raise ServiceException('Failed to start')
+
+except Exception as e:
+    print(e)
+    logging.exception('an error occurred')
+    input('press any key to exit')

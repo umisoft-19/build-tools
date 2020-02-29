@@ -63,7 +63,8 @@ exe = EXE(pyz,
           debug=True,#changed
           strip=False,
           upx=True,
-          console=True
+          console=True,
+          icon='logo3.ico'
         )
 COLLECT(exe,
         a.binaries,
