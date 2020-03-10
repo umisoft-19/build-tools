@@ -20,6 +20,8 @@ update/update/
 update/del_list.txt
 update/meta.json
 temp/
+temp_repo/
+Output/
 dist/
 env/
 key.txt

@@ -94,7 +94,7 @@ Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\clr.pyd"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\d3dcompiler_43.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\d3dcompiler_47.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\debug.log"; DestDir: "{app}"; Flags: ignoreversion
+
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\devtools_resources.pak"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\icudtl.dat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\nakamura9a\Documents\code\git\umisoft\build-tools\client\dist\client\libcef.dll"; DestDir: "{app}"; Flags: ignoreversion
