@@ -16,7 +16,7 @@ a = Analysis(['installer.py'],
              binaries=[
 
              ],
-             datas=appdata,
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -40,4 +40,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True , icon='logo.ico')
+          console=True , icon='../client/logo3.ico')

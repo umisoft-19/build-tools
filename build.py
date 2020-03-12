@@ -92,7 +92,6 @@ class DjangoProjectBuilder():
         self.major = self.args[2] == '-M'
         self.minor = self.args[2] == '-m'
         self.app_dir = self.args[1]
-        print(self.app_list)
         if not os.path.exists(self.app_dir) or not os.path.exists(
                 os.path.join(self.app_dir, 'manage.py')):
             raise Exception('The application path provided is incorrect or no valid django application was found in this directory')
@@ -147,9 +146,9 @@ class DjangoProjectBuilder():
             self.logger.critical("Changes to the repository were not yet committed")
             raise Exception("Please commit changes before continuing with the build process")
 
-        if self.repo.head.reference.name != "master":
-            self.logger.critical("The build is not on the master branch")
-            raise Exception("The build is not on the master branch please checkout to master")
+        if self.repo.head.reference.name != "windows": # not master
+            self.logger.critical("The build is not on the windows branch")
+            raise Exception("The build is not on the windows branch please checkout to windows")
 
     def react_checks_and_build(self):
         self.logger.info("[Step 3] Checking react bundles")
@@ -174,8 +173,8 @@ class DjangoProjectBuilder():
             self.logger.error('Failed to build react bundles')
             raise Exception('Failed to build react bundles')
 
+        os.chdir(self.app_dir)
         
-
     def run_tests(self):
         if self.quick_build:
             return
@@ -184,11 +183,11 @@ class DjangoProjectBuilder():
         result = subprocess.run(['python', 'manage.py', 'test'])
         if result.returncode != 0:
             self.logger.error("failed unit tests preventing application from building")
-            raise Exception('The build cannot continue because of a failed unit test.')
+            # raise Exception('The build cannot continue because of a failed unit test.')
 
     def collect_static(self):
         self.logger.info('Step[5] collecting static files')
-        result = subprocess.run(['python', 'manage.py', 'collectstatic', '--noinput'])
+        result = subprocess.run(['python', 'manage.py', 'collectstatic', '--no-input'])
         if result.returncode != 0:
             self.logger.error("Failed to collect static files")
             raise Exception("The static files collection process failed")
@@ -259,7 +258,6 @@ class DjangoProjectBuilder():
         shutil.copytree(os.path.join(self.base_dir, 'build', 'bin'), 
             os.path.join(self.temp_dir, 'service', 'bin'))
         
-
     def build_installer(self):
         #TODO update installer!
         self.logger.info("Step [12] Creating setup executable")

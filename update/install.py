@@ -86,26 +86,26 @@ class UmisoftUpdateApp():
         except FileNotFoundError:
             self.logger.critical('The application is not installed in the system. Exiting...')
             raise UpdateException('System path is not configured on the system')
-        os.chdir(self.service_path)
-        res = subprocess.run(['service.exe', 'stop'])
-        os.chdir(self.curr_dir)
+        # os.chdir(self.service_path)
+        # res = subprocess.run(['service.exe', 'stop'])
+        # os.chdir(self.curr_dir)
         
-        self.logger.info('Stopping service...')
-        if res.returncode != 0:
-            self.logger.critical('Failed to stop application service. Exiting')
-            raise UpdateException()
+        # self.logger.info('Stopping service...')
+        # if res.returncode != 0:
+        #     self.logger.critical('Failed to stop application service. Exiting')
+        #     raise UpdateException()
 
-        self.logger.info("Comparing update with current version")
-        with open(os.path.join(
-                self.service_path, '..', 'server', 'global_config.json'), 'r') as conf:
-            config = json.load(conf)
-            meta = None
-            with open(resource_path('meta.json'), 'r') as meta_f:
-                self.meta = json.load(meta_f)
+        # self.logger.info("Comparing update with current version")
+        # with open(os.path.join(
+        #         self.service_path, '..', 'server', 'global_config.json'), 'r') as conf:
+        #     config = json.load(conf)
+        #     meta = None
+        #     with open(resource_path('meta.json'), 'r') as meta_f:
+        #         self.meta = json.load(meta_f)
 
-            valid = self.compare_versions(config, self.meta)
-            if not valid:
-                raise UpdateException('The current update is not suitable for the installed applicaiton')
+        #     valid = self.compare_versions(config, self.meta)
+        #     if not valid:
+        #         raise UpdateException('The current update is not suitable for the installed applicaiton')
 
     def update_src(self):
         self.logger.info('Updating application source files')
@@ -151,7 +151,7 @@ class UmisoftUpdateApp():
         os.chdir(os.path.join(self.service_path,'..', 'server'))
         results = subprocess.run(['../python/python.exe', 'manage.py', 'migrate'])
         if results.returncode != 0:
-            self.logger('Could not migrate database')
+            self.logger.critical('Could not migrate database')
             raise UpdateException("Failed to migrate database")
 
 
