@@ -85,3 +85,13 @@ DEBUG:root:Copying application files
 DEBUG:root:Checking for license file
 DEBUG:root:verifying license.
 DEBUG:root:License validated successfully, Click next to continue
+DEBUG:root:Checking for license file
+DEBUG:root:The license file could not be found in the current directory.
+DEBUG:root:Attempting to generate a hardware id for license creation.
+DEBUG:root:hardware id
+DEBUG:root:UUID                                  
+2AA45236-F1DA-6761-08F6-600292B4C599  
+
+
+DEBUG:root:2AA45236-F1DA-6761-08F6-600292B4C599
+DEBUG:root:Hardware id generated. Please email the file "key.txt" located in the current directory to your vendor and they will respond with a license file you can copy to the current directory.

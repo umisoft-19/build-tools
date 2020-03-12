@@ -1,0 +1,34 @@
+<html>
+    <head><title>School database</title></head>
+    <body>
+
+        <style>
+            h1 {
+                background-color: steelblue;
+                text-align:center;
+                color: white;
+                font-family: sans-serif;
+                padding: 1rem;
+            }
+        </style>
+
+        <h1>Welcome to the school database</h1>
+        <p>What is your name?</p>
+        <input type="text" name="name" id="name">
+        <button id='clear'>Click me!</button>
+        <p id='name-string'></p>
+        <a href="https://gonc.co.zw" target='_blank'>Visit other</a>
+
+        <script>
+            var input = document.getElementById('name')
+            input.addEventListener('input', function(evt){
+                document.getElementById('name-string').innerHTML = evt.target.value
+            })
+
+            var btn = document.getElementById('clear')
+            btn.addEventListener('click', function(evt){
+                document.getElementById('name-string').innerHTML = ''
+            })
+        </script>
+    </body>
+</html>
